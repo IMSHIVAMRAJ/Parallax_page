@@ -1,0 +1,121 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/* universal selector define krlo page ke lie */
+
+#wrapper{
+
+    height:100vh;
+    overflow-x:hidden;
+     /* x direction me ab scroll nhi hoga */
+   
+     
+     /* ab 3d ke lie perspective define krna hoga . image and eye ke bich 
+     ki distance is perspective */
+
+     perspective:10px;
+
+}
+
+ .container{
+    position: relative;
+    display: flex;
+    /* ab content ko centre me align krne k lie */
+    justify-content: center;
+    align-items: center;
+     height: 100vh;
+    /* now we need to use transform style taki 3d define ho aur ek img dusre
+    ke upar na chipke; */
+    transform-style: preserve-3d;
+
+    /* ab layering krne ke lie z index hoga ki kon si img kiske upar aae */
+    z-index: -1 ; 
+}
+
+.background{
+    transform: translateZ(-40px) scale(6);
+} 
+
+.foreground{
+    transform: translateZ(-20px) scale(3);
+    /* translate krne se img dur aur paas hota hai */
+
+}
+
+.background, .foreground{
+    position:absolute;
+    /* position ki wajah se dono image overlap hue */
+    height:100%;
+    width: 100%;  
+    z-index:-1;
+    object-fit: cover;
+}
+
+h1{
+    position: absolute;
+    top: 3rem;
+
+    font-size: 10rem ;
+    letter-spacing: 4px;
+    color: white;
+    text-transform: uppercase;
+
+    text-shadow: 0 0 10px rgba(0, 0,0,0,3);
+}
+
+section{
+    background-color:rgb(45, 45, 45);
+    color: white;
+    padding : 5 rem 0px;
+    
+
+}
+
+section h2 {
+    font-size: 5rem;
+    padding: 0 10rem;
+  }
+
+
+.text {
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+  }
+
+.bg1{
+    background-image: url(sport-1.jpg) ;
+}
+
+.bg2{
+    background-image: url(sport-2.jpg) ;
+}
+
+.bg3{
+    background-image: url(sport-3.jpg) ;
+}
+
+.box {
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  .box h4 {
+    font-size: 3.5rem;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 20px;
+  }
+
